@@ -2,9 +2,11 @@ import { appNav } from "@/config/nav-items";
 import { navbarHeight } from "@/utils/sizes";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export function AppNav() {
+  const location = useLocation();
+
   return (
     <nav
       className={`flex justify-around items-center md:hidden bg-card`}
