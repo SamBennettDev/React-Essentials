@@ -1,4 +1,4 @@
-import { navbarHeight } from "@/components/Navbar";
+import { navbarHeight } from "@/utils/sizes";
 
 export const ProtectedHome = () => {
   return (

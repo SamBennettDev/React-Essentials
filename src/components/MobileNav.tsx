@@ -1,60 +1,12 @@
 import { mainNav } from "@/config/nav-items";
-import { ThemeToggle } from "./ThemeToggleSwitch";
-import { Link, useLocation } from "react-router-dom";
-import { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { navbarHeight } from "@/utils/sizes";
 import { faBars, faClose } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { ThemeToggle } from "./ThemeToggleSwitch";
 
-export const navbarHeight = "70";
-
-export function Navbar() {
-  return (
-    <>
-      <div className="hidden md:block">
-        <DesktopNav />
-      </div>
-      <div className={`md:hidden`}>
-        <MobileNav />
-      </div>
-    </>
-  );
-}
-
-function DesktopNav() {
-  const location = useLocation();
-
-  return (
-    <nav
-      className={`h-[${navbarHeight}px] flex justify-between items-center mx-[20px]`}
-    >
-      <div className="flex gap-[10px]">
-        <Link to="/" className="flex items-center justify-center mr-[10px]">
-          <div className="font-bold">React</div>
-          <div className="">Essentials</div>
-        </Link>
-        {mainNav.map((navItem, index) => {
-          return (
-            <Link
-              className={
-                location.pathname === navItem.href
-                  ? "text-foreground"
-                  : "text-muted-foreground hover:text-foreground "
-              }
-              key={index}
-              to={navItem.href}
-              target={navItem.external ? "_blank" : undefined}
-            >
-              {navItem.title}
-            </Link>
-          );
-        })}
-      </div>
-      <ThemeToggle />
-    </nav>
-  );
-}
-
-function MobileNav() {
+export function MobileNav() {
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
 
@@ -65,7 +17,8 @@ function MobileNav() {
   return (
     <>
       <nav
-        className={`h-[${navbarHeight}px] flex justify-between items-center mx-[20px]`}
+        className={`flex justify-between items-center mx-[20px] md:hidden`}
+        style={{ height: `${navbarHeight}px` }}
       >
         <div className="flex items-center">
           {/* Hamburger menu */}

@@ -1,5 +1,5 @@
-import { navbarHeight } from "@/components/Navbar";
 import { H1 } from "@/components/Typography";
+import { navbarHeight } from "@/utils/sizes";
 
 export const FOFPage = () => {
   return (

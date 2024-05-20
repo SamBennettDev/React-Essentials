@@ -1,12 +1,14 @@
 import { AppProvider } from "@/providers/app";
 import { AppRoutes } from "@/routes";
-import { Navbar } from "./components/Navbar";
+import { DesktopNav } from "./components/DesktopNav";
+import { AppNav } from "./components/AppNav";
 
 function App() {
   return (
     <AppProvider>
-      <Navbar />
+      <DesktopNav />
       <AppRoutes />
+      <AppNav />
     </AppProvider>
   );
 }

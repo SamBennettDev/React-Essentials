@@ -1,4 +1,4 @@
-import { navbarHeight } from "@/components/Navbar";
+import { navbarHeight } from "@/utils/sizes";
 import { useRouteError } from "react-router-dom";
 
 export const ErrorPage = () => {
