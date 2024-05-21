@@ -1,4 +1,4 @@
-import { Login, Signup } from "@/features/account";
+import { ForgotPassword, Login, Signup } from "@/features/account";
 import { PublicHome } from "@/features/home";
 
 export const publicRoutes = [
@@ -13,5 +13,9 @@ export const publicRoutes = [
   {
     path: "/Signup",
     element: <Signup />,
+  },
+  {
+    path: "/forgot-password",
+    element: <ForgotPassword />,
   },
 ];
