@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import { protectedRoutes } from "./protected";
 import { publicRoutes } from "./public";
 
-import { useAuth } from "@/lib/auth";
+import { useAuth } from "@/hooks/useAuth";
 import { ErrorPage } from "@/features/misc";
 import { FOFPage } from "@/features/misc";
 
@@ -16,9 +16,9 @@ const commonRoutes = [
 ];
 
 export const AppRoutes = () => {
-  const [auth] = useAuth();
+  const { currentUser } = useAuth();
 
-  const routes = auth.user
+  const routes = currentUser
     ? protectedRoutes.concat(commonRoutes)
     : publicRoutes.concat(commonRoutes);
 

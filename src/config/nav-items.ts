@@ -1,7 +1,7 @@
 import { MainNavItem, NavItem } from "@/types/nav";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import {
-  faContactBook,
+  faCalendar,
   faFolder,
   faHome,
 } from "@fortawesome/free-solid-svg-icons";
@@ -20,7 +20,7 @@ export const mainNav: MainNavItem[] = [
   {
     title: "Contact",
     href: "/Contact",
-    icon: faContactBook,
+    icon: faCalendar,
   },
   {
     title: "GitHub",
@@ -42,9 +42,9 @@ export const appNav: NavItem[] = [
     icon: faFolder,
   },
   {
-    title: "Contact",
-    href: "/Contact",
-    icon: faContactBook,
+    title: "Tracking",
+    href: "/Tracking",
+    icon: faCalendar,
   },
   {
     title: "GitHub",
