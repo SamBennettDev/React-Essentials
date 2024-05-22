@@ -2,6 +2,8 @@ import { Link, useLocation } from "react-router-dom";
 import { ThemeToggle } from "./ThemeToggleSwitch";
 import { mainNav } from "@/config/nav-items";
 import { navbarHeight } from "@/utils/sizes";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
 
 export function DesktopNav() {
   const location = useLocation();
@@ -33,7 +35,20 @@ export function DesktopNav() {
           );
         })}
       </div>
-      <ThemeToggle />
+      <div className="flex justify-center items-center gap-[20px]">
+        <ThemeToggle />
+        <Link
+          className={
+            location.pathname === "/Account"
+              ? "text-foreground w-full h-full flex items-center justify-center"
+              : "text-muted-foreground hover:text-foreground w-full h-full flex items-center justify-center"
+          }
+          to={"/Account"}
+          key={"Account"}
+        >
+          <FontAwesomeIcon icon={faUser} className="text-xl"></FontAwesomeIcon>
+        </Link>
+      </div>
     </nav>
   );
 }
