@@ -1,17 +1,13 @@
 import { H1 } from "@/components/Typography";
 import { useAuth } from "@/hooks/useAuth";
 import { logout } from "@/lib/authLogout";
-import { navbarHeight } from "@/utils/sizes";
 import { Link } from "react-router-dom";
 
 export const Account: React.FC = () => {
   const user = useAuth().currentUser;
 
   return (
-    <div
-      className="flex flex-col justify-center items-center bg-background gap-[32px]"
-      style={{ height: `calc(100dvh - ${navbarHeight}px)` }}
-    >
+    <>
       {user?.photoURL ? (
         <img
           className="object-cover w-[100px] h-[100px] rounded-full drop-shadow-2xl"
@@ -44,6 +40,6 @@ export const Account: React.FC = () => {
           Logout
         </button>
       </div>
-    </div>
+    </>
   );
 };

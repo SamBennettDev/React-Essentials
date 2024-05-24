@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { getAuth } from "firebase/auth";
 import { updateUserEmail, updateUserProfile } from "@/lib/updateUserInfo";
-import { navbarHeight } from "@/utils/sizes";
 
 export const AccountSettings: React.FC = () => {
   const auth = getAuth();
@@ -51,10 +50,7 @@ export const AccountSettings: React.FC = () => {
   };
 
   return (
-    <div
-      className="flex justify-center items-center bg-background"
-      style={{ height: `calc(100dvh - ${navbarHeight}px)` }}
-    >
+    <>
       <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
         <div className="w-full bg-card rounded-lg shadow md:mt-0 sm:max-w-md xl:p-0">
           <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
@@ -126,6 +122,6 @@ export const AccountSettings: React.FC = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
